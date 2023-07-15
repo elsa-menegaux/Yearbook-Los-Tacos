@@ -3,7 +3,7 @@
 /**Profile :
     id (int) : identifiant unique du profil.
     name (string) : nom du profil.
-    tag (string) : tag ou catégorie associé au profil.
+    tag (string) : tag ou catégorie associé au profil (alumni, intervenant, ...).
     bio (text) : biographie ou description du profil.
     picture (string) : chemin ou nom de fichier de la photo du profil.
     relatedArticles (array) : tableau d'articles liés au profil.

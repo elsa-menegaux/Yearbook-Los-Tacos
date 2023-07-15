@@ -4,8 +4,10 @@
  
     id (int) : identifiant unique.
     title (string) : titre.
+    subtitle (string) : titre, citation, ou résumé. Aperçu de l'article.
     content (text) : contenu.
     author (string) : auteur.
+    authorTag (string) : tag de l'auteur (alumni, intervenant, entreprise, ...)
     image (string) : chemin ou nom de fichier de l'illustration.
     tags (array) : tableau de tags ou catégories associés.
     date (datetime) : date de publication.
@@ -24,6 +26,7 @@ namespace App\Entity;
         private $subtitle;
         private $content;
         private $author;
+        private $authorTag;
         private $image;
         private $tags;
         private $date;
@@ -66,6 +69,16 @@ namespace App\Entity;
             $this->author = $author;
         }
     
+        public function getAuthorTag(): ?string
+        {
+            return $this->authorTag;
+        }
+
+        public function setAuthorTag(?string $authorTag): void
+        {
+            $this->authorTag = $authorTag;
+        }
+
         public function getImage(): ?string
         {
             return $this->image;

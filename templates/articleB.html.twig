@@ -7,17 +7,17 @@
   <div class="Illu" style="width: 167px; height: 200px; left: 183px; top: 0px; position: absolute; background: #EBF2FF; border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-end; align-items: center; display: inline-flex">
     <img class="Spinoza2" style="width: 169px; height: 219px" src="{{ publication.image }}" />
   </div>
-  <div class="Title" style="left: 0px; top: 14px; position: absolute; color: #1C1F22; font-size: 20px; font-family: Urbanist; font-weight: 500; word-wrap: break-word">{{ title }}</div>
-  <div class="Auteur" style="left: 0px; top: 48px; position: absolute; color: #1C1F22; font-size: 14px; font-family: Urbanist; font-weight: 500; word-wrap: break-word">{{ author }}</div>
+  <div class="Title" style="left: 0px; top: 14px; position: absolute; color: #1C1F22; font-size: 20px; font-family: Urbanist; font-weight: 500; word-wrap: break-word">{{ publication.title }}</div>
+  <div class="Auteur" style="left: 0px; top: 48px; position: absolute; color: #1C1F22; font-size: 14px; font-family: Urbanist; font-weight: 500; word-wrap: break-word">{{ publication.author }} - {{publication.authorTag}}</div>
   <div class="Tags" style="width: 157px; height: 34px; left: 0px; top: 65px; position: absolute; justify-content: flex-start; align-items: flex-start; gap: 5px; display: inline-flex">
     {% for tag in tags %}
     <div class="Tag" style="padding-top: 10px; padding-bottom: 10px; border-radius: 50px; justify-content: flex-start; align-items: flex-start; display: flex">
-      <div class="Tag" style="color: #009DDC; font-size: 12px; font-family: Urbanist; font-weight: 400; word-wrap: break-word">{{ tag }}</div>
+      <div class="Tag" style="color: #009DDC; font-size: 12px; font-family: Urbanist; font-weight: 400; word-wrap: break-word">{{ publication.tag }}</div>
     </div>
     {% endfor %}
   </div>
-  <div class="DateTime" style="left: 0px; top: 99px; position: absolute; color: #1C1F22; font-size: 12px; font-family: Urbanist; font-weight: 300; word-wrap: break-word">{{ date }} - {{ readingTime }}</div>
-  <div class="Subtitle" style="width: 167px; left: 0px; top: 120px; position: absolute"><span style="color: #1C1F22; font-size: 12px; font-family: Urbanist; font-weight: 400; word-wrap: break-word">{{ subtitle }}</span><span style="color: #009DDC; font-size: 12px; font-family: Urbanist; font-weight: 400; word-wrap: break-word"><a href="{{ learnMoreLink }}">Savoir plus...</a></span></div>
+  <div class="DateTime" style="left: 0px; top: 99px; position: absolute; color: #1C1F22; font-size: 12px; font-family: Urbanist; font-weight: 300; word-wrap: break-word">{{ publication.date }} - {{ publication.readingTime }}</div>
+  <div class="Subtitle" style="width: 167px; left: 0px; top: 120px; position: absolute"><span style="color: #1C1F22; font-size: 12px; font-family: Urbanist; font-weight: 400; word-wrap: break-word">{{ publication.subtitle }}</span><span style="color: #009DDC; font-size: 12px; font-family: Urbanist; font-weight: 400; word-wrap: break-word"><a href="{{ learnMoreLink }}">Savoir plus...</a></span></div>
 </div>
 </body>
 </html>

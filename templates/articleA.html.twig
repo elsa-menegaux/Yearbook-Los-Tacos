@@ -13,11 +13,11 @@
   <div class="Tags" style="width: 205px; height: 34px; left: 0px; top: 227px; position: absolute; justify-content: flex-start; align-items: flex-start; gap: 5px; display: inline-flex">
     {% for tag in publication.tags %}
     <div class="Tag" style="padding-top: 10px; padding-bottom: 10px; border-radius: 50px; justify-content: flex-start; align-items: flex-start; display: flex">
-      <div class="Tag" style="color: #009DDC; font-size: 12px; font-family: Urbanist; font-weight: 400; word-wrap: break-word">{{ tag }}</div>
+      <div class="Tag" style="color: #009DDC; font-size: 12px; font-family: Urbanist; font-weight: 400; word-wrap: break-word">{{ publication.tag }}</div>
     </div>
     {% endfor %}
   </div>
-  <div class="Auteur" style="left: 0px; top: 210px; position: absolute; color: #1C1F22; font-size: 14px; font-family: Urbanist; font-weight: 400; word-wrap: break-word">{{ publication.author }}</div>
+  <div class="Auteur" style="left: 0px; top: 210px; position: absolute; color: #1C1F22; font-size: 14px; font-family: Urbanist; font-weight: 400; word-wrap: break-word">{{ publication.author }} - {{publication.authorTag}}</div>
 </div>
 
 </body>
