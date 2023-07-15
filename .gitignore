@@ -18,3 +18,17 @@
 .phpunit.result.cache
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
+
+
+/node_modules/
+/.vscode/
+/.idea/
+*.swp
+*.swo
+*~
+/build/
+/dist/
+/*.sql
+/config/packages/local/
+/.env.local.mysql
+/.env.local.mysql.php

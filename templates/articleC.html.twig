@@ -1,0 +1,18 @@
+{#petite image, texte dessous#}
+
+<html>
+<body>
+<div class="FormatC" style="width: 106px; height: 208px; position: relative">
+  <div class="Illu" style="width: 106px; height: 151px; left: 0px; top: 0px; position: absolute; flex-direction: column; justify-content: center; align-items: center; display: inline-flex">
+    <img class="Rectangle177" style="width: 106px; height: 151px; border-radius: 10px" src="{{ publication.image }}" />
+  </div>
+  <div class="Title" style="left: 0px; top: 157px; position: absolute; color: black; font-size: 14px; font-family: Urbanist; font-weight: 400; word-wrap: break-word">{{ title }}</div>
+    <div class="Tags" style="width: 106px; left: 0px; top: 174px; position: absolute; color: #009DDC; font-size: 14px; font-family: Urbanist; font-weight: 200; word-wrap: break-word">
+        {% for tag in tags %}
+        {{ tag }}<br/>
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+</html>

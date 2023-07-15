@@ -1,131 +1,140 @@
 <?php
 
-use Doctrine\ORM\Mapping as ORM;
+/**Profile :
+    id (int) : identifiant unique du profil.
+    name (string) : nom du profil.
+    tag (string) : tag ou catégorie associé au profil.
+    bio (text) : biographie ou description du profil.
+    picture (string) : chemin ou nom de fichier de la photo du profil.
+    relatedArticles (array) : tableau d'articles liés au profil.
+    links (array) : tableau de liens ou références associés au profil. */
 
-/**
- * @ORM\Entity
- */
-class Profile
-{
+
+
+    namespace App\Entity;
+
+    use Doctrine\ORM\Mapping as ORM;
+    
     /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
+     * @ORM\Entity
+     * @ORM\Table(name="profile")
      */
-    private $id;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $name;
-
-    /**
-     * @ORM\Column(type="text")
-     */
-    private $biography;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $profilePicture;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $links;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $tags;
-
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Article", mappedBy="author")
-     */
-    private $articles;
-
-    // Constructor
-    public function __construct()
+    class Profile
     {
-        $this->articles = new ArrayCollection();
+        /**
+         * @ORM\Id
+         * @ORM\GeneratedValue
+         * @ORM\Column(type="integer")
+         */
+        private $id;
+    
+        /**
+         * @ORM\Column(type="string", length=255)
+         */
+        private $name;
+    
+        /**
+         * @ORM\Column(type="string", length=255)
+         */
+        private $tag;
+    
+        /**
+         * @ORM\Column(type="text")
+         */
+        private $bio;
+    
+        /**
+         * @ORM\Column(type="string", length=255, nullable=true)
+         */
+        private $picture;
+    
+        /**
+         * @ORM\Column(type="array")
+         */
+        private $relatedArticles;
+    
+        /**
+         * @ORM\Column(type="array")
+         */
+        private $links;
+    
+        
+    
+        public function getId(): ?int
+        {
+            return $this->id;
+        }
+    
+        public function getName(): ?string
+        {
+            return $this->name;
+        }
+    
+        public function setName(string $name): self
+        {
+            $this->name = $name;
+    
+            return $this;
+        }
+    
+        public function getTag(): ?string
+        {
+            return $this->tag;
+        }
+    
+        public function setTag(string $tag): self
+        {
+            $this->tag = $tag;
+    
+            return $this;
+        }
+    
+        public function getBio(): ?string
+        {
+            return $this->bio;
+        }
+    
+        public function setBio(string $bio): self
+        {
+            $this->bio = $bio;
+    
+            return $this;
+        }
+    
+        public function getPicture(): ?string
+        {
+            return $this->picture;
+        }
+    
+        public function setPicture(string $picture): self
+        {
+            $this->picture = $picture;
+    
+            return $this;
+        }
+    
+        public function getRelatedArticles(): ?array
+        {
+            return $this->relatedArticles;
+        }
+    
+        public function setRelatedArticles(array $relatedArticles): self
+        {
+            $this->relatedArticles = $relatedArticles;
+    
+            return $this;
+        }
+    
+        public function getLinks(): ?array
+        {
+            return $this->links;
+        }
+    
+        public function setLinks(array $links): self
+        {
+            $this->links = $links;
+    
+            return $this;
+        }
     }
-
-    // Getters and setters for the properties
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
-    public function getName(): ?string
-    {
-        return $this->name;
-    }
-
-    public function setName(?string $name): self
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    public function getBiography(): ?string
-    {
-        return $this->biography;
-    }
-
-    public function setBiography(?string $biography): self
-    {
-        $this->biography = $biography;
-
-        return $this;
-    }
-
-    public function getProfilePicture(): ?string
-    {
-        return $this->profilePicture;
-    }
-
-    public function setProfilePicture(?string $profilePicture): self
-    {
-        $this->profilePicture = $profilePicture;
-
-        return $this;
-    }
-
-    public function getLinks(): ?string
-    {
-        return $this->links;
-    }
-
-    public function setLinks(?string $links): self
-    {
-        $this->links = $links;
-
-        return $this;
-    }
-
-    public function getTags(): ?string
-    {
-        return $this->tags;
-    }
-
-    public function setTags(?string $tags): self
-    {
-        $this->tags = $tags;
-
-        return $this;
-    }
-
-    public function getArticles(): ?ArrayCollection
-    {
-        return $this->articles;
-    }
-
-    public function setArticles(?ArrayCollection $articles): self
-    {
-        $this->articles = $articles;
-
-        return $this;
-    }
-}
-?>
+    
