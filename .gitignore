@@ -32,3 +32,4 @@
 /config/packages/local/
 /.env.local.mysql
 /.env.local.mysql.php
+.env
